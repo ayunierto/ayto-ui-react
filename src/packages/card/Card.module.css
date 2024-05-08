@@ -1,0 +1,22 @@
+.card {
+  border: 1px solid rgb(29, 25, 49);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: rgb(38, 44, 55);
+}
+
+.card.small {
+  padding: 8px;
+}
+
+.card.medium {
+  padding: 12px;
+}
+
+.card.large {
+  padding: 20px;
+}
+
+.card.hoverable:hover {
+  background-color: rgb(46, 50, 64);
+}
