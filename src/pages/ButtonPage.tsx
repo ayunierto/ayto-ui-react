@@ -3,23 +3,32 @@ import Card from "../packages/card/Card";
 
 const ButtonPage = () => {
   return (
-    <>
+    <div className="flex flex-col gap-4">
       <h1 className="text-4xl">Button</h1>
 
       <p className="text-base">
         Los botones permiten a los usuarios realizar acciones al hacer click.
       </p>
+      <hr className="opacity-20" />
 
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
-          <Card size="large" style={{ display: "flex", gap: "10px" }}>
+          <Card
+            variant="bordered"
+            size="large"
+            style={{ display: "flex", gap: "10px" }}
+          >
             <Button variant="solid">deafult</Button>
           </Card>
         </div>
         <div className="flex flex-col gap-2">
           <h2 className="text-2xl">Colors</h2>
 
-          <Card size="large" style={{ display: "flex", gap: "10px" }}>
+          <Card
+            variant="bordered"
+            size="large"
+            style={{ display: "flex", gap: "10px" }}
+          >
             <Button color="default" variant="solid">
               default
             </Button>
@@ -37,6 +46,7 @@ const ButtonPage = () => {
           <h2 className="text-2xl">Sizes</h2>
 
           <Card
+            variant="bordered"
             size="large"
             style={{
               display: "flex",
@@ -59,6 +69,7 @@ const ButtonPage = () => {
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h2 className="text-2xl">Variants</h2>
           <Card
+            variant="bordered"
             size="large"
             style={{
               display: "flex",
@@ -78,7 +89,7 @@ const ButtonPage = () => {
           </Card>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

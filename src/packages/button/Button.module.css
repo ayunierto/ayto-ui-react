@@ -12,7 +12,7 @@ button {
   justify-content: center;
   outline-style: none;
   overflow: hidden;
-  transition: all 0.1s ease;
+  transition: all 0.3s ease;
   user-select: none;
 }
 
@@ -39,7 +39,7 @@ button.large {
 
 button.default {
   background-color: #ffffff10;
-  border-color: rgb(78, 67, 74);
+  border-color: #4e434a;
   color: #f3f3f3;
 }
 button.default:hover {
