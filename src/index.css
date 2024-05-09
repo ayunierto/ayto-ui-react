@@ -64,13 +64,6 @@ body,
   box-shadow: var(--shadown);
 }
 
-main {
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #212121;
