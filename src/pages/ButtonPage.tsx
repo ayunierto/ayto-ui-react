@@ -54,11 +54,11 @@ const ButtonPage = () => {
         </DocsCard>
         <DocsCard title="With Icon" className="items-center">
           <Button size="small" color="default" variant="solid">
-            <Icon icon="home" />
+            <Icon icon="home" size="small" />
             small
           </Button>
           <Button size="medium" color="default" variant="solid">
-            <Icon icon="home" />
+            <Icon icon="home" size="medium" />
             medium
           </Button>
           <Button size="large" color="default" variant="solid">
@@ -68,7 +68,7 @@ const ButtonPage = () => {
         </DocsCard>
         <DocsCard title="Only Icon" className="items-center">
           <Button size="small" color="default" variant="solid">
-            <Icon icon="home" />
+            <Icon icon="home" size="small" />
           </Button>
           <Button size="medium" color="default" variant="solid">
             <Icon icon="home" />
