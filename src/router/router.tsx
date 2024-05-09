@@ -5,18 +5,36 @@ import ErrorPage from "../pages/ErrorPage";
 import CardPage from "../pages/CardPage";
 import IconPage from "../pages/IconPage";
 
-export const routes = [
+type ComponentsRoutesProps = {
+  path: string;
+  element: JSX.Element;
+  title: string;
+}[];
+
+export const mainRoutes = [
   {
-    path: "/docs/button",
+    path: "/getting-started",
     element: <ButtonPage />,
+    title: "Getting Started",
+    icon: "code",
+  },
+];
+
+export const componentsRoutes: ComponentsRoutesProps = [
+  {
+    path: "/docs/components/button",
+    element: <ButtonPage />,
+    title: "Buttons",
   },
   {
-    path: "/docs/card",
+    path: "/docs/components/card",
     element: <CardPage />,
+    title: "Cards",
   },
   {
-    path: "/docs/icon",
+    path: "/docs/components/icon",
     element: <IconPage />,
+    title: "Icons",
   },
 ];
 
@@ -26,10 +44,11 @@ export const router = createBrowserRouter([
     element: <DocsLayout />,
     errorElement: <ErrorPage />,
     children: [
-      ...routes,
+      ...mainRoutes,
+      ...componentsRoutes,
       {
         index: true,
-        element: routes[0].element,
+        element: mainRoutes[0].element,
       },
     ],
   },
