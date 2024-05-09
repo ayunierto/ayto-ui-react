@@ -1,0 +1,21 @@
+.navbar {
+  height: 60px;
+  position: absolute;
+  backdrop-filter: blur(12px);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.left_items {
+  display: flex;
+  gap: 10px;
+}
+
+.right_items {
+  display: flex;
+  gap: 10px;
+}
