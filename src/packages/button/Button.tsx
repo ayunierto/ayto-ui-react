@@ -1,4 +1,4 @@
-import styles from "./Button.module.css";
+import "./Button.css";
 
 type Props = {
   /**
@@ -66,11 +66,9 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       type={type}
-      className={`${styles[color]} ${styles[variant]} ${styles[size]} ${
-        disabled ? styles.disabled : ""
-      } ${block ? styles.block : ""} ${className} ${
-        contentLeft ? styles.content__left : ""
-      }`}
+      className={`${color} ${variant} ${size} ${disabled ? "disabled" : ""} ${
+        block ? "block" : ""
+      } ${className} ${contentLeft ? "content__left" : ""}  `}
       style={style}
       {...props}
     >
