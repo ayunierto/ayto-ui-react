@@ -1,42 +1,27 @@
 @import "material-symbols";
 @import url("https://fonts.cdnfonts.com/css/segoe-ui-4");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 :root {
-  --fontFamilyBase: "Segoe UI", "Segoe UI Web (West European)", -apple-system,
-    BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  --bg-color: rgb(40, 26, 45);
-  background: rgb(33, 31, 38);
-  background: -moz-linear-gradient(
-    98deg,
-    rgba(33, 31, 38, 1) 10%,
-    rgba(39, 26, 47, 1) 58%,
-    rgba(40, 29, 28, 1) 92%
+  --fontFamilyBase: Roboto, "Segoe UI", "Segoe UI Web (West European)",
+    -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --bg-color: #1c1e38;
+  --color: white;
+  background: #1c1e38;
+  background: radial-gradient(
+    circle,
+    rgba(28, 30, 56, 1) 0%,
+    rgba(29, 33, 35, 1) 58%
   );
-  background: -webkit-linear-gradient(
-    98deg,
-    rgba(33, 31, 38, 1) 10%,
-    rgba(39, 26, 47, 1) 58%,
-    rgba(40, 29, 28, 1) 92%
-  );
-  background: linear-gradient(
-    98deg,
-    rgba(33, 31, 38, 1) 10%,
-    rgba(39, 26, 47, 1) 58%,
-    rgba(40, 29, 28, 1) 92%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#211f26",endColorstr="#281d1c",GradientType=1);
-
-  --bg-secondary: rgba(255, 255, 255, 0.08);
-
-  --shadown: 0 0 8px rgba(0, 0, 0, 0.24);
-  --color: #ffffff;
-  --primary-color: rgb(219, 158, 229);
 
   font-family: var(--fontFamilyBase);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+
   color-scheme: light dark;
   color: var(--color);
   font-synthesis: none;
@@ -51,6 +36,10 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+}
+
+a {
+  font-weight: 300 !important;
 }
 
 html,
