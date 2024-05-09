@@ -1,45 +1,40 @@
 button,
 .button {
-  /* min-width: 100px; */
+  display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  display: inline-flex;
   font-family: var(--fontFamilyBase);
   font-size: 14px;
   font-weight: 600;
-  gap: 10px;
-  justify-content: center;
+  gap: 8px;
   outline-style: none;
   overflow: hidden;
   transition: all 0.3s ease;
   user-select: none;
 }
 
-/* Sizes */
 button.small,
 .button.small {
-  font-size: 13px;
-  padding: 6px 14px;
-  min-height: auto;
-  font-weight: 600;
+  font-size: 12px;
+  height: 30px;
+  padding: 0 10px 0 10px;
 }
 button.medium,
 .button.medium {
   font-size: 14px;
-  padding: 8px 16px;
-  min-height: auto;
-  font-weight: 600;
+  /* padding: 10px 16px; */
+  padding: 0 14px 0 14px;
+  height: 40px;
 }
 button.large,
 .button.large {
   font-size: 16px;
-  padding: 10px 20px;
-  min-height: auto;
-  font-weight: 800;
+  padding: 0 16px 0 16px;
+  height: 50px;
 }
-/* End Sizes */
 
 button.default,
 .button.default {
@@ -104,6 +99,7 @@ button.disabled:hover,
 
 button.block,
 .button.block {
+  display: flex;
   width: 100%;
 }
 
@@ -127,6 +123,6 @@ button.active::before,
   content: "";
   width: 4px;
   height: 20px;
-  background-color: rgb(219, 158, 229);
+  background-color: #db9ee5;
   border-radius: 10px;
 }

@@ -66,9 +66,11 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       type={type}
-      className={`${color} ${variant} ${size} ${disabled ? "disabled" : ""} ${
-        block ? "block" : ""
-      } ${className} ${contentLeft ? "content__left" : ""}  `}
+      className={`.button ${color} ${variant} ${size} ${
+        disabled ? "disabled" : ""
+      } ${block ? "block" : ""} ${className} ${
+        contentLeft ? "content__left" : ""
+      }  `}
       style={style}
       {...props}
     >
