@@ -1,0 +1,40 @@
+.alert {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+  font-size: 14px;
+  width: max-content;
+  user-select: none;
+  border: none;
+}
+
+.alert.primary {
+  background-color: #34424d;
+}
+
+.alert.alert.primary span {
+  color: #388ac9;
+}
+
+.alert.success {
+  background-color: #464b1e8f;
+}
+
+.alert.alert.success span {
+  color: #6ccb5f;
+}
+
+.alert.warning {
+  background-color: #584217a1;
+}
+.alert.alert.warning span {
+  color: #ffa600;
+}
+
+.alert.error {
+  background-color: #6e2525af;
+}
+.alert.alert.error span {
+  color: #eb3838;
+}
