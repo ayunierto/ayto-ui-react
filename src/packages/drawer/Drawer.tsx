@@ -2,8 +2,9 @@ import { NavLink } from "react-router-dom";
 import Button from "../button/Button";
 import Icon from "../icon/Icon";
 import "./Drawer.css";
-import { componentsRoutes, mainRoutes } from "../../router/router";
+import { RoutesProps, routes } from "../../router/router";
 import { useState } from "react";
+import { IconNames } from "../icon/types";
 
 type Props = {
   /**
@@ -25,20 +26,58 @@ type Props = {
   width?: string;
 };
 
-/**
- *
- */
+interface TransformRoutes {
+  [name: number | string]:
+    | {
+        path: string;
+        title: string;
+        icon: IconNames;
+      }
+    | {
+        path: string;
+        title: string;
+      }[];
+}
+
 const Drawer = ({
   children,
   className = "",
   style,
   width = "320px",
-}: // navbarHeight = "0px",
-Props) => {
+}: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  const transformRoutes = (originalRoutes: RoutesProps) => {
+    const transformedRoutes: TransformRoutes = {};
+    let componentIndex = 1;
+
+    originalRoutes.forEach((route) => {
+      if (route.subMenu) {
+        if (!transformedRoutes[route.subMenu]) {
+          transformedRoutes[route.subMenu] = [];
+        }
+        transformedRoutes[route.subMenu].push({
+          path: route.path,
+          title: route.title,
+        });
+      } else {
+        transformedRoutes[componentIndex] = {
+          path: route.path,
+          title: route.title,
+          icon: route.icon!,
+        };
+        componentIndex++;
+      }
+    });
+
+    return transformedRoutes;
+  };
+
+  const transformedRoutes = transformRoutes(routes);
+
   return (
     <div
       className={`drawer flex flex-col justify-between gap-1 ${className}`}
@@ -59,27 +98,92 @@ Props) => {
       <div className={``}>{/* <Input /> */}</div>
 
       <div className={`drawer__menu `}>
-        {mainRoutes.map((route) => (
-          <NavLink
-            key={route.path}
-            to={route.path}
-            className={({ isActive, isPending }) =>
-              `${isPending ? "pending" : isActive ? "active" : ""}`
-            }
-          >
-            <Button variant="flat" block contentLeft>
-              <Icon icon={route.icon} />
-              {route.title}
-            </Button>
-          </NavLink>
-        ))}
-        <div className="">
+        {Object.entries(transformedRoutes).map((index) =>
+          Array.isArray(index[1]) ? (
+            <div className="menu">
+              <div className="">
+                <Button
+                  onClick={toggle}
+                  variant="flat"
+                  block
+                  style={{ justifyContent: "space-between" }}
+                >
+                  <span className="flex gap-2">
+                    <Icon icon="deployed_code" />
+                    Components
+                  </span>
+                  <Icon
+                    icon="keyboard_arrow_down"
+                    className={` ${isOpen ? "rotate-180" : ""}`}
+                  />
+                </Button>
+              </div>
+              <div
+                className={`flex flex-col gap-1 transition-all mt-1 duration-300 origin-top ${
+                  isOpen
+                    ? "h-full opacity-100 scale-y-100"
+                    : "h-0 opacity-0 scale-y-0"
+                }`}
+              >
+                {index[1].map((route) => (
+                  <NavLink
+                    key={route.title}
+                    to={route.path}
+                    className={({ isActive, isPending }) =>
+                      `${isPending ? "pending" : isActive ? "active" : ""}`
+                    }
+                  >
+                    <Button variant="flat" block contentLeft className="pl-2">
+                      {route.title}
+                    </Button>
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <NavLink
+              key={index[1].path}
+              to={index[1].path}
+              className={({ isActive, isPending }) =>
+                `${isPending ? "pending" : isActive ? "active" : ""}`
+              }
+            >
+              <Button variant="flat" block contentLeft>
+                {index[1].icon && <Icon icon={index[1].icon} />}
+                {index[1].title}
+              </Button>
+            </NavLink>
+          )
+        )}
+
+        {/* {routes.map((route) => (
+          <>
+            {!route.subMenu ? (
+              <NavLink
+                key={route.path}
+                to={route.path}
+                className={({ isActive, isPending }) =>
+                  `${isPending ? "pending" : isActive ? "active" : ""}`
+                }
+              >
+                <Button variant="flat" block contentLeft>
+                  {route.icon && <Icon icon={route.icon} />}
+                  {route.title}
+                </Button>
+              </NavLink>
+            ) : (
+              ""
+            )}
+          </>
+        ))} */}
+
+        {/* <div className="menu">
           <div className="">
             <Button
               onClick={toggle}
               variant="flat"
               block
-              className="justify-between"
+              style={{ justifyContent: "space-between" }}
             >
               <span className="flex gap-2">
                 <Icon icon="deployed_code" />
@@ -98,9 +202,9 @@ Props) => {
                 : "h-0 opacity-0 scale-y-0"
             }`}
           >
-            {componentsRoutes.map((route) => (
+            {routes.map((route) => (
               <NavLink
-                key={route.path}
+                key={route.title}
                 to={route.path}
                 className={({ isActive, isPending }) =>
                   `${isPending ? "pending" : isActive ? "active" : ""}`
@@ -112,7 +216,7 @@ Props) => {
               </NavLink>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className={`drawer__footer`}>
