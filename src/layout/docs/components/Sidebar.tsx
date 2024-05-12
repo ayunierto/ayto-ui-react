@@ -12,6 +12,7 @@ import {
   DrawerHeaderInforName,
   DrawerMenu,
   Icon,
+  Input,
   Menu,
   MenuList,
   MenuTrigger,
@@ -36,7 +37,9 @@ export const Sidebar = ({ settings, isOpen }: Props) => {
         </DrawerHeaderInfo>
       </DrawerHeader>
 
-      <div className={``}>{/* <Input /> */}</div>
+      <div className={``}>
+        <Input contentAfter={<Icon hoverable icon="search" />} />
+      </div>
 
       <DrawerMenu>
         {Object.entries(transformedRoutes).map((index) =>
