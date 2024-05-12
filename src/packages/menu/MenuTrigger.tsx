@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import Button from "../button/Button";
 import { MenuContext } from "./Menu";
 import Icon from "../icon/Icon";
@@ -31,9 +31,35 @@ const MenuTrigger = ({
   label = "Default label",
   icon,
 }: Props) => {
-  const { toggle, isOpen } = useContext(MenuContext);
+  const { toggle, isOpen, close, autoClose } = useContext(MenuContext);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      close();
+    }
+  };
+
+  useEffect(() => {
+    if (autoClose) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
+
   return (
-    <div onClick={toggle} className={`${className}`} style={style}>
+    <div
+      onClick={toggle}
+      className={`${className}`}
+      style={style}
+      ref={dropdownRef}
+    >
       {children || (
         <Button
           variant="flat"
