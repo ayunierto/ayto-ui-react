@@ -9,6 +9,7 @@ import { IconNames } from "../packages/icon/types";
 import AboutPage from "../pages/AboutPage";
 import MenuPage from "../pages/MenuPage";
 import DialogPage from "../pages/DialogPage";
+import InputPage from "../pages/InputPage";
 
 export type RoutesProps = {
   path: string;
@@ -34,25 +35,25 @@ export const routes: RoutesProps = [
   {
     path: "/docs/components/button",
     element: <ButtonPage />,
-    title: "Buttons",
+    title: "Button",
     subMenu: "Components",
   },
   {
     path: "/docs/components/card",
     element: <CardPage />,
-    title: "Cards",
+    title: "Card",
     subMenu: "Components",
   },
   {
     path: "/docs/components/icon",
     element: <IconPage />,
-    title: "Icons",
+    title: "Icon",
     subMenu: "Components",
   },
   {
     path: "/docs/components/alert",
     element: <AlertPage />,
-    title: "Alers",
+    title: "Aler",
     subMenu: "Components",
   },
   {
@@ -65,6 +66,12 @@ export const routes: RoutesProps = [
     path: "/docs/components/dialog",
     element: <DialogPage />,
     title: "Dialog",
+    subMenu: "Components",
+  },
+  {
+    path: "/docs/components/input",
+    element: <InputPage />,
+    title: "Input",
     subMenu: "Components",
   },
 ];

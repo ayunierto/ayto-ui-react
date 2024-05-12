@@ -7,3 +7,4 @@ export * from "./menu";
 export * from "./navbar";
 export * from "./hooks";
 export * from "./dialog";
+export * from "./input";
