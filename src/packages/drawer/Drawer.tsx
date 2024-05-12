@@ -28,6 +28,7 @@ type Props = {
    * Use when the drawer is below a navbar.
    */
   top?: string;
+  isOpen: boolean;
 };
 
 export const Drawer = ({
@@ -36,6 +37,7 @@ export const Drawer = ({
   style,
   width = "320px",
   top = "0px",
+  isOpen,
 }: Props) => {
   const [height, setHeight] = useState<string>();
 
@@ -59,7 +61,7 @@ export const Drawer = ({
 
   return (
     <nav
-      className={`drawer ${className}`}
+      className={`drawer ${isOpen ? "open" : "closed"} ${className}`}
       style={{ width, height: height, top, ...style }}
     >
       {children}

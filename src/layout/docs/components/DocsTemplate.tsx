@@ -4,7 +4,7 @@ type Props = {
   className?: string;
 };
 
-export const DocsTemplate = ({ docTitle, children, className }: Props) => {
+export const DocsTemplate = ({ docTitle, children, className = "" }: Props) => {
   return (
     <div className={`flex flex-col gap-4 ${className}`}>
       <h1 className="text-4xl">{docTitle}</h1>

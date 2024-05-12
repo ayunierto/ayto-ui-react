@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 4px;
+  transition: all 0.3s;
 }
 
 .drawer__header {
@@ -71,4 +72,12 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.drawer.open {
+  transform: translateX(0px);
+}
+
+.drawer.closed {
+  transform: translateX(-400px);
 }

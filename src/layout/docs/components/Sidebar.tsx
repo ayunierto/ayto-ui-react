@@ -20,13 +20,14 @@ import {
 
 type Props = {
   settings: Settings;
+  isOpen: boolean;
 };
 
-export const Sidebar = ({ settings }: Props) => {
+export const Sidebar = ({ settings, isOpen }: Props) => {
   const transformedRoutes = transformRoutes(routes);
 
   return (
-    <Drawer top={settings.navbarHeight}>
+    <Drawer top={settings.navbarHeight} isOpen={isOpen}>
       <DrawerHeader>
         <DrawerHeaderImg />
         <DrawerHeaderInfo>

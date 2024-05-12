@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
 
-import Drawer from "./components/Sidebar";
+import { Sidebar } from "./components/Sidebar";
 import Nav from "./components/Nav";
+import { useState } from "react";
 
 export interface Settings {
   navbarHeight: string;
@@ -12,17 +13,22 @@ const settings = {
 };
 
 const DocsLayout = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <>
-      <Nav settings={settings} />
-      <Drawer settings={settings} />
+      <Nav settings={settings} toggleSidebar={toggle} />
+      <Sidebar settings={settings} isOpen={isOpen} />
 
       <main
         style={{
           paddingTop: settings.navbarHeight,
-          paddingLeft: "340px",
+          paddingLeft: isOpen ? "340px" : "20px",
           paddingRight: "20px",
           paddingBottom: "20px",
+          transition: "all .3s",
         }}
       >
         <Outlet />
