@@ -7,7 +7,8 @@ import IconPage from "../pages/IconPage";
 import AlertPage from "../pages/AlertPage";
 import { IconNames } from "../packages/icon/types";
 import AboutPage from "../pages/AboutPage";
-// Dynamic routes for Menu and Submenus elements
+import MenuPage from "../pages/MenuPage";
+
 export type RoutesProps = {
   path: string;
   element: JSX.Element;
@@ -51,6 +52,12 @@ export const routes: RoutesProps = [
     path: "/docs/components/alert",
     element: <AlertPage />,
     title: "Alers",
+    subMenu: "Components",
+  },
+  {
+    path: "/docs/components/menu",
+    element: <MenuPage />,
+    title: "Menu",
     subMenu: "Components",
   },
 ];
