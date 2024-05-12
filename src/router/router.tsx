@@ -8,6 +8,7 @@ import AlertPage from "../pages/AlertPage";
 import { IconNames } from "../packages/icon/types";
 import AboutPage from "../pages/AboutPage";
 import MenuPage from "../pages/MenuPage";
+import DialogPage from "../pages/DialogPage";
 
 export type RoutesProps = {
   path: string;
@@ -58,6 +59,12 @@ export const routes: RoutesProps = [
     path: "/docs/components/menu",
     element: <MenuPage />,
     title: "Menu",
+    subMenu: "Components",
+  },
+  {
+    path: "/docs/components/dialog",
+    element: <DialogPage />,
+    title: "Dialog",
     subMenu: "Components",
   },
 ];
