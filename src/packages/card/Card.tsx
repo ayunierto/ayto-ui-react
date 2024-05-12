@@ -1,3 +1,5 @@
+import "./Card.css";
+
 type Props = {
   /**
    * Chindren to be rendered inside the Card
@@ -29,7 +31,7 @@ type Props = {
   hoverable?: boolean;
 };
 
-const Card = ({
+export const Card = ({
   children,
   className,
   style,
@@ -54,11 +56,9 @@ const Card = ({
 
   return (
     <div
-      className={`${styles.base} ${styles.variant[variant]} ${
-        styles.size[size]
-      } ${shadow ? "shadow-lg shadow-slate-900" : "shadow-none"} ${
-        hoverable ? "hover:bg-[#232833]" : ""
-      } ${className}`}
+      className={`card ${variant} ${styles.size[size]} ${
+        shadow ? "shadow" : ""
+      } ${hoverable ? "hover" : ""} ${className}`}
       style={style}
     >
       {children}

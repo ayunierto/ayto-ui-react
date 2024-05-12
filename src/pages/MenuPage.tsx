@@ -116,6 +116,80 @@ const MenuPage = () => {
             </MenuList>
           </Menu>
         </DocsCard>
+
+        <DocsCard title="Expose parameters" style={{ flexWrap: "wrap" }}>
+          <Menu>
+            {({ isOpen, autoClose, toggle }) => (
+              <>
+                <MenuTrigger>
+                  <Button
+                    onClick={toggle}
+                    variant="bordered"
+                    block
+                    style={{ justifyContent: "space-between" }}
+                  >
+                    <span className="flex gap-2">
+                      <Icon icon="air_purifier" />
+                      Menu:{" "}
+                      {autoClose ? "with auto close" : "without auto close"}
+                    </span>
+                    <Icon
+                      icon="keyboard_arrow_down"
+                      className={isOpen ? "rotate-180" : ""}
+                    />
+                  </Button>
+                </MenuTrigger>
+                <MenuList floating>
+                  <Button variant="flat" block contentLeft>
+                    Option 1
+                  </Button>
+                  <Button variant="flat" block contentLeft>
+                    Option 2
+                  </Button>
+                  <Button variant="flat" block contentLeft>
+                    Option 3
+                  </Button>
+                </MenuList>
+              </>
+            )}
+          </Menu>
+
+          <Menu autoClose={false}>
+            {({ isOpen, autoClose, toggle }) => (
+              <>
+                <MenuTrigger>
+                  <Button
+                    onClick={toggle}
+                    variant="bordered"
+                    block
+                    style={{ justifyContent: "space-between" }}
+                  >
+                    <span className="flex gap-2">
+                      <Icon icon="air_purifier" />
+                      Menu:{" "}
+                      {autoClose ? "with auto close" : "without auto close"}
+                    </span>
+                    <Icon
+                      icon="keyboard_arrow_down"
+                      className={isOpen ? "rotate-180" : ""}
+                    />
+                  </Button>
+                </MenuTrigger>
+                <MenuList>
+                  <Button variant="flat" block contentLeft>
+                    Option 1
+                  </Button>
+                  <Button variant="flat" block contentLeft>
+                    Option 2
+                  </Button>
+                  <Button variant="flat" block contentLeft>
+                    Option 3
+                  </Button>
+                </MenuList>
+              </>
+            )}
+          </Menu>
+        </DocsCard>
       </DocsWrapper>
     </DocsTemplate>
   );

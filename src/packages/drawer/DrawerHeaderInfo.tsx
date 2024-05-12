@@ -1,5 +1,3 @@
-import styles from "./Navbar.module.css";
-
 type Props = {
   /**
    * Children to be rendered inside
@@ -15,12 +13,19 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-export const LeftItems = ({ children, className = "", style }: Props) => {
+/**
+ *
+ */
+export const DrawerHeaderInfo = ({
+  children,
+  className = "",
+  style,
+}: Props) => {
   return (
-    <div className={`${styles.left_items} ${className}`} style={style}>
+    <div className={`drawer__header__info ${className}`} style={style}>
       {children}
     </div>
   );
 };
 
-export default LeftItems;
+export default DrawerHeaderInfo;

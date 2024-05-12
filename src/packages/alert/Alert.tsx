@@ -25,7 +25,7 @@ type Props = {
   size?: "small" | "medium" | "large";
 };
 
-const Alert = ({
+export const Alert = ({
   children,
   className = "",
   style,

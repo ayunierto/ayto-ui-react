@@ -15,10 +15,7 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-/**
- *
- */
-const RightItems = ({ children, className = "", style }: Props) => {
+export const RightItems = ({ children, className = "", style }: Props) => {
   return (
     <div className={`${styles.right_items} ${className}`} style={style}>
       {children}

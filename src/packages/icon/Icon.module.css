@@ -6,21 +6,21 @@
   transition: all 0.3s ease;
 }
 
-.hoverable:hover {
+.icon.hoverable:hover {
   cursor: pointer;
   /* color: var(--primary-color); */
   background: #ffffff10;
 }
 
-.small {
+.icon.small {
   font-size: 16px !important;
   margin: -3px 0 -3px 0;
 }
-.medium {
+.icon.medium {
   margin: -8px 0 -8px 0;
   font-size: 26px !important;
 }
-.large {
+.icon.large {
   margin: -12px -10px -12px -10px;
   font-size: 36px !important;
 }

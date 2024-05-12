@@ -25,7 +25,7 @@ type Props = {
   icon: IconNames;
 };
 
-const Icon = ({
+export const Icon = ({
   className = "",
   style,
   icon,

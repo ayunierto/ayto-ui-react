@@ -28,7 +28,12 @@ interface MenuContextProps {
 export const MenuContext = createContext({} as MenuContextProps);
 const { Provider } = MenuContext;
 
-const Menu = ({ children, className = "", style, autoClose = true }: Props) => {
+export const Menu = ({
+  children,
+  className = "",
+  style,
+  autoClose = true,
+}: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = () => {
     setIsOpen(!isOpen);

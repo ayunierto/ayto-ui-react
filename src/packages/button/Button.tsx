@@ -47,7 +47,7 @@ type Props = {
   contentLeft?: boolean;
 };
 
-const Button = ({
+export const Button = ({
   children,
   className = "",
   style,

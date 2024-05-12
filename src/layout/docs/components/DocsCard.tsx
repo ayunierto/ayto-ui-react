@@ -1,4 +1,4 @@
-import Card from "../../../packages/card/Card";
+import { Card } from "../../../packages";
 
 type Props = {
   children?: React.ReactNode;
@@ -8,7 +8,7 @@ type Props = {
   direction?: "col" | "row";
 };
 
-const DocsCard = ({
+export const DocsCard = ({
   children,
   className = "",
   style,

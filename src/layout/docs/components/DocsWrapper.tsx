@@ -5,10 +5,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-/**
- *
- */
-const DocsWrapper = ({ children }: Props) => {
+export const DocsWrapper = ({ children }: Props) => {
   return <div className="flex flex-col gap-6">{children}</div>;
 };
 

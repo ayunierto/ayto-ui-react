@@ -21,10 +21,7 @@ type Props = {
   icon?: IconNames;
 };
 
-/**
- *
- */
-const MenuTrigger = ({
+export const MenuTrigger = ({
   children,
   className = "",
   style,

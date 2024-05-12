@@ -1,36 +1,33 @@
-import { NavLink, Outlet } from "react-router-dom";
-import Navbar from "../../packages/navbar/Navbar";
-import LeftItems from "../../packages/navbar/LeftItems";
-import RightItems from "../../packages/navbar/RightItems";
-import Button from "../../packages/button/Button";
-import Icon from "../../packages/icon/Icon";
-import Drawer from "../../packages/drawer/Drawer";
+import { Outlet } from "react-router-dom";
+
+import Drawer from "./components/Sidebar";
+import Nav from "./components/Nav";
+
+export interface Settings {
+  navbarHeight: string;
+}
+
+const settings = {
+  navbarHeight: "60px",
+};
 
 const DocsLayout = () => {
   return (
-    <div>
-      <Navbar position="fixed">
-        <LeftItems>
-          <Button variant="flat" size="medium">
-            <Icon icon="menu" size="large" />
-          </Button>
-        </LeftItems>
-        <RightItems>
-          <NavLink to={"/login"}>
-            <Button variant="flat">Login</Button>
-          </NavLink>
-          <NavLink to={"/register"}>
-            <Button variant="flat">Register</Button>
-          </NavLink>
-        </RightItems>
-      </Navbar>
+    <>
+      <Nav settings={settings} />
+      <Drawer settings={settings} />
 
-      <Drawer></Drawer>
-
-      <main className="pt-[60px] pl-[340px] pr-[20px]">
+      <main
+        style={{
+          paddingTop: settings.navbarHeight,
+          paddingLeft: "340px",
+          paddingRight: "20px",
+          paddingBottom: "20px",
+        }}
+      >
         <Outlet />
       </main>
-    </div>
+    </>
   );
 };
 

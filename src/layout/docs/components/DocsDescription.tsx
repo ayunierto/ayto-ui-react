@@ -2,7 +2,7 @@ type Props = {
   children: string;
 };
 
-const Description = ({ children }: Props) => {
+export const Description = ({ children }: Props) => {
   return (
     <>
       <p className="text-base">{children}</p>

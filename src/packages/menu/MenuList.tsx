@@ -20,10 +20,7 @@ type Props = {
   position?: "left" | "right";
 };
 
-/**
- *
- */
-const MenuList = ({
+export const MenuList = ({
   children,
   className = "",
   style,
