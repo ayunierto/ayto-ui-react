@@ -2,7 +2,7 @@ type Props = {
   children: string;
 };
 
-export const Description = ({ children }: Props) => {
+export const DocsDescription = ({ children }: Props) => {
   return (
     <>
       <p className="text-base">{children}</p>
@@ -11,4 +11,4 @@ export const Description = ({ children }: Props) => {
   );
 };
 
-export default Description;
+export default DocsDescription;

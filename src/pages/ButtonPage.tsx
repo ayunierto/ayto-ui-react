@@ -1,9 +1,10 @@
-import DocsCard from "../layout/docs/components/DocsCard";
-import DocsDescription from "../layout/docs/components/DocsDescription";
-import DocsTemplate from "../layout/docs/components/DocsTemplate";
-import DocsWrapper from "../layout/docs/components/DocsWrapper";
-import Button from "../packages/button/Button";
-import Icon from "../packages/icon/Icon";
+import {
+  DocsCard,
+  DocsDescription,
+  DocsTemplate,
+  DocsWrapper,
+} from "../layout/docs/components";
+import { Button, Icon } from "../packages";
 
 const ButtonPage = () => {
   return (
