@@ -1,14 +1,15 @@
 .navbar {
   /* height: 50px; */
   position: absolute;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(50px);
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 4px;
   padding-right: 4px;
-  z-index: 1;
+  z-index: 2;
+  /* background: #1d2124; */
 }
 
 .left_items {
@@ -19,4 +20,12 @@
 .right_items {
   display: flex;
   gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    position: fixed;
+    background: #1d2124;
+    /* backdrop-filter: blur(50px); */
+  }
 }

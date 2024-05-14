@@ -1,7 +1,7 @@
 .input {
   border: 1px solid rgb(51, 44, 59);
   border-radius: 6px;
-  border-bottom: 2px solid #9f9f9f;
+  border-bottom: 3px solid #9f9f9f;
   background: rgba(255, 255, 255, 0.05);
   font-size: 14px;
   transition: all 0.3s ease;
@@ -15,7 +15,7 @@
 
 .input:focus-within,
 .input:focus-within.input:hover {
-  border-bottom: 2px solid #a332a7;
+  border-bottom: 3px solid #3234a7;
   background: rgba(255, 255, 255, 0);
 }
 
