@@ -37,9 +37,10 @@ export const Sidebar = ({ settings, isOpen }: Props) => {
         </DrawerHeaderInfo>
       </DrawerHeader>
 
-      <div className={``}>
-        <Input contentAfter={<Icon hoverable icon="search" />} />
-      </div>
+      <Input
+        size="small"
+        contentAfter={<Icon hoverable icon="search" size="small" />}
+      />
 
       <DrawerMenu>
         {Object.entries(transformedRoutes).map((index) =>

@@ -2,7 +2,7 @@
   border: 1px solid rgb(51, 44, 59);
   border-radius: 6px;
   border-bottom: 2px solid #9f9f9f;
-  background-color: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   font-size: 14px;
   transition: all 0.3s ease;
   width: 100%;
@@ -13,8 +13,18 @@
   padding: 0 10px;
 }
 
+.input:focus-within,
+.input:focus-within.input:hover {
+  border-bottom: 2px solid #a332a7;
+  background: rgba(255, 255, 255, 0);
+}
+
+.input:active {
+  border-bottom: 2px solid #a332a7;
+}
+
 .input:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .input::placeholder {

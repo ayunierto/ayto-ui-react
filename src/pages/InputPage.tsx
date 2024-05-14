@@ -9,9 +9,7 @@ import { Icon, Input } from "../packages";
 const InputPage = () => {
   return (
     <DocsTemplate docTitle="Button">
-      <DocsDescription>
-        Los botones permiten a los usuarios realizar acciones al hacer click.
-      </DocsDescription>
+      <DocsDescription>Input allow users to enter texts.</DocsDescription>
 
       <DocsWrapper>
         <DocsCard title="Default" direction="col">
