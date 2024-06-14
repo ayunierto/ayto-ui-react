@@ -1,48 +1,59 @@
+import { Card } from "@/components/ui/card";
 import DocsCard from "../layout/docs/components/DocsCard";
 import DocsDescription from "../layout/docs/components/DocsDescription";
 import DocsTemplate from "../layout/docs/components/DocsTemplate";
 import DocsWrapper from "../layout/docs/components/DocsWrapper";
-import Card from "../packages/card/Card";
+import { Flex } from "@/components/ui/flex";
 
 const CardPage = () => {
   return (
     <DocsTemplate docTitle="Card">
       <DocsDescription>
-        Las tarjetas es un contenedor para envolver otros elementos
-        resaltandolos en la pantalla.
+        Cards is a container to wrap other elements and highlighted on the
+        screen.
       </DocsDescription>
       <DocsWrapper>
-        <DocsCard title="Default">
-          <Card>This is a Card</Card>
-        </DocsCard>
+        <DocsCard
+          title="Default"
+          code={`<Card>This is a Card</Card>`}
+          scope={{ Card }}
+        />
 
-        <DocsCard title="Sizes" direction="col">
-          <Card size="small">small</Card>
-          <Card size="medium">medium</Card>
-          <Card size="large">large</Card>
-        </DocsCard>
+        <DocsCard
+          title="Sizes"
+          direction="col"
+          code={`
+            <Flex align={"center"}>
+              <Card size="sm">small</Card>
+              <Card size="md">medium</Card>
+              <Card size="lg">large</Card>
+            </Flex>
+          `}
+          scope={{ Card, Flex }}
+        />
 
-        <DocsCard title="Variants" direction="col">
-          <Card variant="flat">flat</Card>
-          <Card variant="solid">solid</Card>
-          <Card variant="bordered">bordered</Card>
-        </DocsCard>
+        <DocsCard
+          title="Variants"
+          direction="col"
+          code={`
+          <Flex>
+            <Card variant="default">default</Card>
+            <Card variant="outline">outline</Card>
+          </Flex>
+          `}
+          scope={{ Card, Flex }}
+        />
 
-        <DocsCard title="With hover" direction="col">
-          <Card hoverable variant="flat">
-            flat
-          </Card>
-          <Card hoverable variant="solid">
-            solid
-          </Card>
-          <Card hoverable variant="bordered">
-            bordered
-          </Card>
-        </DocsCard>
-
-        <DocsCard title="Shadow" direction="col">
-          <Card shadow>bordered</Card>
-        </DocsCard>
+        <DocsCard
+          title="With hover"
+          direction="col"
+          code={`
+              <Card hoverable variant="default">
+                default
+              </Card>
+          `}
+          scope={{ Card, Flex }}
+        ></DocsCard>
       </DocsWrapper>
     </DocsTemplate>
   );

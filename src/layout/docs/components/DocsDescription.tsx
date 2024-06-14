@@ -5,8 +5,8 @@ type Props = {
 export const DocsDescription = ({ children }: Props) => {
   return (
     <>
-      <p className="text-base">{children}</p>
-      <hr className="opacity-20" />
+      <p>{children}</p>
+      <hr className="dark:border-[#35305090]" />
     </>
   );
 };

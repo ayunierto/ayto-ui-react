@@ -1,15 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import ButtonPage from "../pages/ButtonPage";
-import DocsLayout from "../layout/docs/DocsLayout";
-import ErrorPage from "../pages/ErrorPage";
-import CardPage from "../pages/CardPage";
-import IconPage from "../pages/IconPage";
-import AlertPage from "../pages/AlertPage";
-import { IconNames } from "../packages/icon/types";
-import AboutPage from "../pages/AboutPage";
-import MenuPage from "../pages/MenuPage";
-import DialogPage from "../pages/DialogPage";
-import InputPage from "../pages/InputPage";
+import { IconNames } from "../components/ui/icon/types";
+import { GettingStated } from "@/pages";
+import DocsLayout from "@/layout/docs/DocsLayout";
+import AboutPage from "@/pages/AboutPage";
+import AlertPage from "@/pages/AlertPage";
+import ButtonPage from "@/pages/ButtonPage";
+import CardPage from "@/pages/CardPage";
+import DialogPage from "@/pages/DialogPage";
+import ErrorPage from "@/pages/ErrorPage";
+import IconPage from "@/pages/IconPage";
+import InputPage from "@/pages/InputPage";
+import MenuPage from "@/pages/MenuPage";
 
 export type RoutesProps = {
   path: string;
@@ -22,7 +23,7 @@ export type RoutesProps = {
 export const routes: RoutesProps = [
   {
     path: "/getting-started",
-    element: <ButtonPage />,
+    element: <GettingStated />,
     title: "Getting Started",
     icon: "code",
   },
@@ -53,7 +54,7 @@ export const routes: RoutesProps = [
   {
     path: "/docs/components/alert",
     element: <AlertPage />,
-    title: "Aler",
+    title: "Alert",
     subMenu: "Components",
   },
   {
