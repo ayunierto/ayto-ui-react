@@ -6,6 +6,12 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    "outDir": "dist",
+    "declaration": true,
+    "allowJs": true,
+    "emitDeclarationOnly": false,
+    "declarationMap": false,
+
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
@@ -13,10 +19,10 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
     "jsx": "react-jsx",
 
     /* Linting */
