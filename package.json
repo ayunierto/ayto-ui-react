@@ -9,13 +9,13 @@
     "components"
   ],
   "license": "MIT",
-  "homepage": "https://todo...",
+  "homepage": "https://ayto-ui-react.netlify.app/",
   "repository": {
     "url": "https://github.com/ayunierto/ayto-ui-react",
     "type": "git"
   },
   "files": [
-    "dist/"
+    "dist/components"
   ],
   "release": {
     "branches": [
