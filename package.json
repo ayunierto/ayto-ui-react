@@ -3,6 +3,8 @@
   "private": false,
   "version": "0.0.1",
   "type": "module",
+  "main": "dist/components/index.js",
+  "typings": "dist/components/index.d.js",
   "keywords": [
     "react",
     "ui",
